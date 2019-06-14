@@ -1,0 +1,39 @@
+def parse(l):
+    for x in l:
+        m=[]
+        n=[]
+        r=0
+        flag=0
+        if x[0]!='>':
+            for i in range(len(x)):
+                if x[i]=='<':
+                    if i<len(x)-1 and m==[]:
+                        r=0
+                    m.append('<')
+                elif x[i]=='>' and len(m)>0:
+                    m.pop()
+                    r=r+2
+                    if len(m)==0 and i==len(x)-1:
+                        print(r)
+                        flag=1
+                        break
+                else:
+                    continue
+        if m!=[] or x[0]=='>':
+            print(0)
+        if n!=[] or x[0]!='>' and flag==0:
+            print(r)
+        
+T=int(input(""))
+l=[]
+if 1<=T<=500:
+    for i in range(T):
+        e=str(input(""))
+        if 1<=len(e)<=106:
+            l.append(e)
+        else:
+            print("Enter string of length less than 106")
+            break
+else:
+    print("Enter number of strings less than 500")
+parse(l)
