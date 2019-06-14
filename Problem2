@@ -1,0 +1,13 @@
+n=int(input(""))
+l=[]
+data=[]
+for i in range(n):
+    l.append(i)
+l.append(0)
+q=int(input(""))
+for i in range(q):
+    d=str(input(""))
+    data=d.split()
+    for j in range(int(data[0]),int(data[1])+1):
+        l[j]=l[j]+int(data[2])
+print(max(l))
